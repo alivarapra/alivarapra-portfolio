@@ -299,8 +299,8 @@ header * { position: relative; z-index: 1; }
 .is-sec   { width: 85%; }
 .cloud    { width: 80%; }
 .fintech  { width: 75%; }
-.pm       { width: 70%; }
-.change   { width: 65%; }
+.pm       { width: 90%; }
+.change   { width: 90%; }
 
 /* ----------------------------------------------------------------
    Portfolio Section
