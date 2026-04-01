@@ -192,7 +192,7 @@ header * { position: relative; z-index: 1; }
    About Section
 ---------------------------------------------------------------- */
 #about {
-  background: #2b2b2b;
+  background: #1a1a1a;
   padding: 90px 0 72px;
   color: #7a7a7a;
 }
@@ -212,7 +212,7 @@ header * { position: relative; z-index: 1; }
 .button {
   display: inline-block;
   padding: 12px 20px;
-  background: #444;
+  background: #11abb0;
   color: #fff;
   font-size: 1.4rem;
   font-weight: 700;
@@ -222,7 +222,7 @@ header * { position: relative; z-index: 1; }
   margin-top: 6px;
 }
 
-.button:hover { background: #11abb0; color: #fff; }
+.button:hover { background: #0e8c90; color: #fff; }
 
 .button i { margin-right: 6px; }
 
@@ -306,7 +306,7 @@ header * { position: relative; z-index: 1; }
    Portfolio Section
 ---------------------------------------------------------------- */
 #portfolio {
-  background: #1a1a1a;
+  background: #0f0f0f;
   padding: 90px 0 72px;
 }
 
@@ -372,67 +372,10 @@ header * { position: relative; z-index: 1; }
 .portfolio-item .item-wrap:hover .link-icon { opacity: 1; }
 
 /* ----------------------------------------------------------------
-   Testimonials Section
----------------------------------------------------------------- */
-#testimonials {
-  background: url('../images/testimonials-bg.jpg') no-repeat center center;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 90px 0;
-  text-align: center;
-  position: relative;
-}
-
-#testimonials::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-}
-
-#testimonials * { position: relative; z-index: 1; }
-
-#testimonials h1 {
-  font-size: 1.6rem;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 30px;
-}
-
-.flexslider { overflow: hidden; }
-
-.slides li {
-  display: none;
-  padding: 0 60px;
-}
-
-.slides li:first-child { display: block; }
-
-.slides blockquote p {
-  font-family: 'Libre Baskerville', serif;
-  font-size: 2rem;
-  font-style: italic;
-  color: #fff;
-  line-height: 1.8;
-  padding-bottom: 12px;
-}
-
-.slides blockquote cite {
-  font-size: 1.4rem;
-  color: #11abb0;
-  font-style: normal;
-  font-weight: 600;
-}
-
-.slides blockquote cite::before { content: '- '; }
-
-/* ----------------------------------------------------------------
    Contact Section
 ---------------------------------------------------------------- */
 #contact {
-  background: #191919;
+  background: #1a1a1a;
   padding: 90px 0 72px;
   color: #7a7a7a;
 }
@@ -458,13 +401,20 @@ header * { position: relative; z-index: 1; }
 #contact textarea {
   width: 100%;
   padding: 14px;
-  background: #323232;
-  border: none;
+  background: #252525;
+  border: 1px solid #333;
   color: #fff;
   font-size: 1.5rem;
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 18px;
   border-radius: 3px;
+  transition: border-color 0.3s;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: none;
+  border-color: #11abb0;
 }
 
 #contact textarea { min-height: 200px; resize: vertical; }
