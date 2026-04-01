@@ -1,0 +1,585 @@
+/* ----------------------------------------------------------------
+   Base / Reset
+---------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 62.5%; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #838c95;
+  background: #0f0f0f;
+}
+
+a { text-decoration: none; color: #11abb0; transition: color 0.3s; }
+a:hover { color: #fff; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  color: #313131;
+  font-weight: 700;
+}
+
+img { max-width: 100%; height: auto; }
+
+ul { list-style: none; }
+
+.row {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.row::after { content: ''; display: table; clear: both; }
+
+/* Columns */
+.three.columns  { width: 25%; float: left; }
+.four.columns   { width: 33.33%; float: left; }
+.eight.columns  { width: 66.66%; float: left; }
+.nine.columns   { width: 75%; float: left; }
+.ten.columns    { width: 83.33%; float: left; }
+.twelve.columns { width: 100%; float: left; }
+.two.columns    { width: 16.66%; float: left; }
+
+/* ----------------------------------------------------------------
+   WhatsApp Floating Button
+---------------------------------------------------------------- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #25d366;
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.whatsapp-float:hover { transform: scale(1.1); color: #fff; }
+
+/* ----------------------------------------------------------------
+   Header
+---------------------------------------------------------------- */
+header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url('../images/header-background.jpg') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+header * { position: relative; z-index: 1; }
+
+/* Navigation */
+#nav-wrap {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 12px 0;
+  transition: background 0.3s;
+}
+
+#nav-wrap.opaque {
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.mobile-btn { display: none; }
+
+#nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+#nav li a {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 8px 14px;
+  transition: color 0.3s;
+}
+
+#nav li a:hover,
+#nav li.current a {
+  color: #11abb0;
+}
+
+/* Banner */
+.banner { margin-top: 0; }
+
+.banner-text { text-align: center; }
+
+.banner-text h1 {
+  font-size: 7.8rem;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.banner-text h3 {
+  font-size: 1.8rem;
+  color: #a8a8a8;
+  font-weight: 300;
+  line-height: 1.9;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.banner-text h3 span { color: #fff; }
+
+.banner-text hr {
+  width: 60%;
+  margin: 18px auto 24px;
+  border: none;
+  border-top: 1px solid rgba(150,150,150,0.1);
+}
+
+/* Social icons */
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.social li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.8rem;
+  background: #444;
+  transition: background 0.3s;
+}
+.social li a:hover { background: #11abb0; }
+
+/* Scroll down arrow */
+.scrolldown { position: absolute; bottom: 30px; width: 100%; text-align: center; }
+.scrolldown a { color: #fff; font-size: 3rem; }
+.scrolldown a:hover { color: #11abb0; }
+
+.icon-down-circle::before { content: '\f13a'; font-family: FontAwesome; }
+
+/* ----------------------------------------------------------------
+   About Section
+---------------------------------------------------------------- */
+#about {
+  background: #2b2b2b;
+  padding: 90px 0 72px;
+  color: #7a7a7a;
+}
+
+#about h2 { font-size: 2.2rem; color: #fff; margin-bottom: 12px; }
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 6px;
+}
+
+.address span { display: block; }
+
+.button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #444;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  transition: background 0.3s;
+  margin-top: 6px;
+}
+
+.button:hover { background: #11abb0; color: #fff; }
+
+.button i { margin-right: 6px; }
+
+/* ----------------------------------------------------------------
+   Resume Section
+---------------------------------------------------------------- */
+#resume {
+  background: #fff;
+  padding: 90px 0 72px;
+}
+
+#resume .header-col h1 {
+  font-size: 1.6rem;
+  color: #11abb0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #11abb0;
+  padding-bottom: 6px;
+}
+
+#resume h3 {
+  font-size: 2rem;
+  color: #313131;
+}
+
+#resume .info {
+  font-size: 1.4rem;
+  color: #6e7881;
+  margin-bottom: 6px;
+}
+
+#resume .info span { margin: 0 6px; }
+#resume .info .date { font-style: italic; }
+
+.education, .work, .skill {
+  margin-bottom: 48px;
+}
+
+.item { margin-bottom: 30px; }
+
+/* Skill Bars */
+.bars { margin-top: 12px; }
+
+.skills li {
+  position: relative;
+  background: #ccc;
+  margin-bottom: 10px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skills li em {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #313131;
+  position: relative;
+  z-index: 2;
+  padding-left: 12px;
+  font-style: normal;
+}
+
+.bar-expand {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  background: #11abb0;
+  border-radius: 3px;
+  transition: width 1s ease-in-out;
+}
+
+.it-ops   { width: 90%; }
+.is-sec   { width: 85%; }
+.cloud    { width: 80%; }
+.fintech  { width: 75%; }
+.pm       { width: 70%; }
+.change   { width: 65%; }
+
+/* ----------------------------------------------------------------
+   Portfolio Section
+---------------------------------------------------------------- */
+#portfolio {
+  background: #1a1a1a;
+  padding: 90px 0 72px;
+}
+
+#portfolio h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+#portfolio-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.portfolio-item .item-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.portfolio-item .item-wrap img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.portfolio-item .item-wrap:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.portfolio-item .item-wrap:hover .overlay { opacity: 1; }
+
+.portfolio-item-meta h5 { color: #fff; font-size: 1.6rem; margin-bottom: 4px; }
+.portfolio-item-meta p { color: #c6c7c7; font-size: 1.3rem; }
+
+.link-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 1.8rem;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.portfolio-item .item-wrap:hover .link-icon { opacity: 1; }
+
+/* ----------------------------------------------------------------
+   Testimonials Section
+---------------------------------------------------------------- */
+#testimonials {
+  background: url('../images/testimonials-bg.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 90px 0;
+  text-align: center;
+  position: relative;
+}
+
+#testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#testimonials * { position: relative; z-index: 1; }
+
+#testimonials h1 {
+  font-size: 1.6rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+
+.flexslider { overflow: hidden; }
+
+.slides li {
+  display: none;
+  padding: 0 60px;
+}
+
+.slides li:first-child { display: block; }
+
+.slides blockquote p {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.8;
+  padding-bottom: 12px;
+}
+
+.slides blockquote cite {
+  font-size: 1.4rem;
+  color: #11abb0;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.slides blockquote cite::before { content: '- '; }
+
+/* ----------------------------------------------------------------
+   Contact Section
+---------------------------------------------------------------- */
+#contact {
+  background: #191919;
+  padding: 90px 0 72px;
+  color: #7a7a7a;
+}
+
+#contact .section-head h1 {
+  font-size: 1.6rem;
+  color: #11abb0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#contact form { margin-top: 12px; }
+
+#contact label {
+  display: block;
+  font-size: 1.4rem;
+  color: #ebeeee;
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 14px;
+  background: #323232;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 18px;
+  border-radius: 3px;
+}
+
+#contact textarea { min-height: 200px; resize: vertical; }
+
+#contact .submit {
+  background: #11abb0;
+  color: #fff;
+  border: none;
+  padding: 14px 36px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.3s;
+}
+
+#contact .submit:hover { background: #0e8c90; }
+
+#message-warning { display: none; color: #d72828; margin-top: 10px; }
+#message-success { display: none; color: #11abb0; margin-top: 10px; }
+
+.footer-widgets h4 { color: #ebeeee; font-size: 1.6rem; margin-bottom: 12px; }
+.footer-widgets .address { color: #7a7a7a; }
+
+.required { color: #11abb0; }
+
+/* ----------------------------------------------------------------
+   Footer
+---------------------------------------------------------------- */
+footer {
+  background: #0f0f0f;
+  padding: 48px 0 24px;
+  text-align: center;
+  color: #7a7a7a;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.social-links li a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.8rem;
+  background: #333;
+  transition: background 0.3s;
+}
+
+.social-links li a:hover { background: #11abb0; }
+
+.copyright { margin-bottom: 6px; font-size: 1.3rem; }
+.copyright li { display: inline-block; }
+.copyright li::after { content: ' \00b7 '; padding: 0 4px; }
+.copyright li:last-child::after { content: ''; }
+.copyright a { color: #11abb0; }
+
+#go-top {
+  position: fixed;
+  bottom: 30px;
+  right: 100px;
+  z-index: 999;
+  display: none;
+}
+
+#go-top a {
+  background: #333;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  text-align: center;
+  transition: background 0.3s;
+}
+#go-top a:hover { background: #11abb0; }
+
+/* ----------------------------------------------------------------
+   Responsive
+---------------------------------------------------------------- */
+@media only screen and (max-width: 768px) {
+  .three.columns, .four.columns, .eight.columns,
+  .nine.columns, .ten.columns, .twelve.columns,
+  .two.columns {
+    width: 100%;
+    float: none;
+  }
+
+  .banner-text h1 { font-size: 4.8rem; }
+  .banner-text h3 { font-size: 1.6rem; }
+
+  #portfolio-wrapper { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+
+  .slides li { padding: 0 20px; }
+
+  .mobile-btn {
+    display: block;
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 10px;
+    text-align: center;
+  }
+
+  #nav { display: none; flex-direction: column; background: rgba(0,0,0,0.9); }
+  #nav-wrap:target #nav { display: flex; }
+
+  #go-top { right: 10px; }
+  .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 2.4rem; }
+}
