@@ -229,55 +229,73 @@
 
   <!-- Contact Section -->
   <section id="contact">
-    <div class="row section-head">
-      <div class="two columns header-col">
-        <h1><span>Get In Touch.</span></h1>
-      </div>
-      <div class="ten columns">
-        <p class="lead"></p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="eight columns">
-        <form id="contactForm">
-          <fieldset>
-            <div>
-              <label for="contactName">Name <span class="required">*</span></label>
-              <input type="text" id="contactName" name="contactName" required />
-            </div>
-            <div>
-              <label for="contactEmail">Email <span class="required">*</span></label>
-              <input type="text" id="contactEmail" name="contactEmail" required />
-            </div>
-            <div>
-              <label for="contactSubject">Subject</label>
-              <input type="text" id="contactSubject" name="contactSubject" />
-            </div>
-            <div>
-              <label for="contactMessage">Message <span class="required">*</span></label>
-              <textarea cols="50" rows="15" id="contactMessage" name="contactMessage" required></textarea>
-            </div>
-            <div>
-              <button type="submit" class="submit">Submit</button>
-            </div>
-          </fieldset>
-        </form>
-        <div id="message-warning">Error boy</div>
-        <div id="message-success"><i class="fa fa-check"></i> Your message was sent, thank you!</div>
+    <div class="contact-container">
+      <div class="contact-header">
+        <h1>Get In Touch</h1>
+        <p>Have a project in mind or just want to say hello? Drop me a message and I'll get back to you as soon as possible.</p>
       </div>
 
-      <aside class="four columns footer-widgets">
-        <div class="widget widget_contact">
-          <h4>Contact</h4>
-          <p class="address">
-            Ali M K<br />
-            Budaiya 555<br />
-            Manama, Bahrain 1212<br />
-            <span>+973 36500532</span>
-          </p>
+      <div class="contact-grid">
+        <!-- Contact Info Cards -->
+        <div class="contact-info">
+          <div class="info-card">
+            <div class="info-icon"><i class="fa fa-map-marker"></i></div>
+            <div class="info-content">
+              <h4>Location</h4>
+              <p>Budaiya 555, Manama<br />Bahrain 1212</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fa fa-phone"></i></div>
+            <div class="info-content">
+              <h4>Phone</h4>
+              <p>+973 36500532</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fa fa-envelope"></i></div>
+            <div class="info-content">
+              <h4>Email</h4>
+              <p>alivarapra@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon"><i class="fa fa-whatsapp"></i></div>
+            <div class="info-content">
+              <h4>WhatsApp</h4>
+              <p><a href="https://wa.me/97336500532?text=Hi%20!%2" target="_blank">Chat with me</a></p>
+            </div>
+          </div>
         </div>
-      </aside>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="contactName" name="contactName" placeholder="Your Name *" required />
+              </div>
+              <div class="form-group">
+                <input type="email" id="contactEmail" name="contactEmail" placeholder="Your Email *" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" id="contactSubject" name="contactSubject" placeholder="Subject" />
+            </div>
+            <div class="form-group">
+              <textarea id="contactMessage" name="contactMessage" placeholder="Your Message *" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <i class="fa fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+          <div id="message-warning">Something went wrong. Please try again.</div>
+          <div id="message-success"><i class="fa fa-check-circle"></i> Your message was sent successfully!</div>
+        </div>
+      </div>
     </div>
   </section>
 
