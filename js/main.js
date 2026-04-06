@@ -52,7 +52,7 @@ window.addEventListener('scroll', () => {
 })();
 
 /* ----------------------------------------------------------------
-   Contact Form (basic handler)
+   Contact Form (Netlify Forms submission)
 ---------------------------------------------------------------- */
 const form = document.getElementById('contactForm');
 if (form) {
@@ -60,6 +60,7 @@ if (form) {
     e.preventDefault();
     const msgSuccess = document.getElementById('message-success');
     const msgWarning = document.getElementById('message-warning');
+    const submitBtn = form.querySelector('.submit-btn');
 
     // Simple validation
     const name = document.getElementById('contactName').value.trim();
@@ -72,9 +73,35 @@ if (form) {
       return;
     }
 
-    msgWarning.style.display = 'none';
-    msgSuccess.style.display = 'block';
-    form.reset();
+    // Disable button while submitting
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin"></i> Sending...';
+
+    // Submit to Netlify
+    const formData = new FormData(form);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(response => {
+      if (response.ok) {
+        msgWarning.style.display = 'none';
+        msgSuccess.style.display = 'block';
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    })
+    .catch(() => {
+      msgWarning.style.display = 'block';
+      msgSuccess.style.display = 'none';
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fa fa-paper-plane"></i> Send Message';
+    });
   });
 }
 
