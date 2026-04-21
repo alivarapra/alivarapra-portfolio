@@ -7,119 +7,113 @@ public_folder: "/assets/img/uploads"
 
 collections:
 
-  # ── Personal Info ─────────────────────────────────────────────
+  # ── All single-file settings grouped under one collection ─────
   - name: "settings"
-    label: "⚙️ Personal Info"
+    label: "⚙️ Site Settings"
     files:
 
       - name: "profile"
-        label: "Profile & Contact"
+        label: "👤 Profile & Contact"
         file: "_data/profile.json"
         fields:
           - { label: "Full Name",        name: name,        widget: string,  default: "Ali M K" }
           - { label: "Job Title",        name: title,       widget: string,  default: "Group IT Manager" }
-          - { label: "Hero Taglines (comma separated)", name: typed_items, widget: string, default: "Group IT Manager, Cybersecurity Expert, Cloud Architect, FinTech Enthusiast" }
+          - { label: "Hero Taglines (comma separated)", name: typed_items, widget: string, default: "Group IT Manager,Cybersecurity Expert,Cloud Architect,FinTech Enthusiast" }
           - { label: "Short Bio",        name: short_bio,   widget: text }
           - { label: "Long Bio",         name: long_bio,    widget: text }
           - { label: "Phone",            name: phone,       widget: string,  default: "+973 36500532" }
           - { label: "Email",            name: email,       widget: string,  default: "alivarapra@gmail.com" }
           - { label: "City",             name: city,        widget: string,  default: "Manama, Bahrain" }
           - { label: "Address",          name: address,     widget: string,  default: "Budaiya 555, Bahrain 1212" }
-          - { label: "Profile Photo",    name: photo,       widget: image,   default: "/assets/img/my-profile-img.jpg" }
-          - { label: "Hero Background",  name: hero_bg,     widget: image,   default: "/assets/img/hero-bg.jpg" }
+          - { label: "Profile Photo",    name: photo,       widget: image }
+          - { label: "Hero Background",  name: hero_bg,     widget: image }
 
       - name: "social"
-        label: "Social Links"
+        label: "🔗 Social Links"
         file: "_data/social.json"
         fields:
-          - { label: "Facebook URL",   name: facebook,   widget: string }
-          - { label: "Instagram URL",  name: instagram,  widget: string }
-          - { label: "LinkedIn URL",   name: linkedin,   widget: string }
-          - { label: "GitHub URL",     name: github,     widget: string }
-          - { label: "WhatsApp URL",   name: whatsapp,   widget: string }
+          - { label: "Facebook URL",   name: facebook,   widget: string, required: false }
+          - { label: "Instagram URL",  name: instagram,  widget: string, required: false }
+          - { label: "LinkedIn URL",   name: linkedin,   widget: string, required: false }
+          - { label: "GitHub URL",     name: github,     widget: string, required: false }
+          - { label: "WhatsApp URL",   name: whatsapp,   widget: string, required: false }
 
-  # ── Skills ────────────────────────────────────────────────────
-  - name: "skills"
-    label: "📊 Skills"
-    file: "_data/skills.json"
-    fields:
-      - name: skills
-        label: Skills
-        widget: list
+      - name: "skills"
+        label: "📊 Skills"
+        file: "_data/skills.json"
         fields:
-          - { label: "Skill Name", name: name,  widget: string }
-          - { label: "Level (%)", name: level, widget: number, value_type: int, min: 0, max: 100 }
-
-  # ── Stats ─────────────────────────────────────────────────────
-  - name: "stats"
-    label: "📈 Stats"
-    file: "_data/stats.json"
-    fields:
-      - name: stats
-        label: Stats
-        widget: list
-        fields:
-          - { label: "Icon (Bootstrap Icons class)", name: icon,  widget: string }
-          - { label: "Value",                        name: value, widget: number, value_type: int }
-          - { label: "Label",                        name: label, widget: string }
-          - { label: "Sublabel",                     name: sub,   widget: string }
-
-  # ── Education ─────────────────────────────────────────────────
-  - name: "education"
-    label: "🎓 Education"
-    file: "_data/education.json"
-    fields:
-      - name: education
-        label: Education
-        widget: list
-        fields:
-          - { label: "Degree",      name: degree,      widget: string }
-          - { label: "Institution", name: institution,  widget: string }
-          - { label: "Year",        name: year,         widget: string }
-          - { label: "Description", name: description,  widget: text, required: false }
-
-  # ── Experience ────────────────────────────────────────────────
-  - name: "experience"
-    label: "💼 Work Experience"
-    file: "_data/experience.json"
-    fields:
-      - name: experience
-        label: Experience
-        widget: list
-        fields:
-          - { label: "Job Title",   name: title,       widget: string }
-          - { label: "Company",     name: company,     widget: string }
-          - { label: "Period",      name: period,      widget: string }
-          - { label: "Description", name: description, widget: text }
-          - name: bullets
-            label: "Key Achievements"
+          - name: skills
+            label: Skills
             widget: list
-            field: { label: "Point", name: point, widget: string }
+            fields:
+              - { label: "Skill Name", name: name,  widget: string }
+              - { label: "Level (%)",  name: level, widget: number, value_type: int, min: 0, max: 100 }
 
-  # ── Services ──────────────────────────────────────────────────
-  - name: "services"
-    label: "🛠️ Services"
-    file: "_data/services.json"
-    fields:
-      - name: services
-        label: Services
-        widget: list
+      - name: "stats"
+        label: "📈 Stats Counters"
+        file: "_data/stats.json"
         fields:
-          - { label: "Title",       name: title,       widget: string }
-          - { label: "Icon (Bootstrap Icons class)", name: icon, widget: string }
-          - { label: "Description", name: description, widget: text }
+          - name: stats
+            label: Stats
+            widget: list
+            fields:
+              - { label: "Icon (Bootstrap Icons class e.g. bi-clock-history)", name: icon,  widget: string }
+              - { label: "Number Value",  name: value, widget: number, value_type: int }
+              - { label: "Label",         name: label, widget: string }
+              - { label: "Sub Label",     name: sub,   widget: string }
 
-  # ── Portfolio ─────────────────────────────────────────────────
-  - name: "portfolio"
-    label: "🖼️ Portfolio / Works"
-    file: "_data/portfolio.json"
-    fields:
-      - name: items
-        label: Portfolio Items
-        widget: list
+      - name: "education"
+        label: "🎓 Education"
+        file: "_data/education.json"
         fields:
-          - { label: "Title",       name: title,    widget: string }
-          - { label: "Category",    name: category, widget: select, options: ["security", "cloud", "content", "fintech"] }
-          - { label: "Description", name: desc,     widget: string }
-          - { label: "Image",       name: image,    widget: image }
-          - { label: "Link URL",    name: link,     widget: string, required: false }
+          - name: education
+            label: Education
+            widget: list
+            fields:
+              - { label: "Degree",      name: degree,      widget: string }
+              - { label: "Institution", name: institution, widget: string }
+              - { label: "Year",        name: year,        widget: string }
+              - { label: "Description", name: description, widget: text, required: false }
+
+      - name: "experience"
+        label: "💼 Work Experience"
+        file: "_data/experience.json"
+        fields:
+          - name: experience
+            label: Experience
+            widget: list
+            fields:
+              - { label: "Job Title",   name: title,       widget: string }
+              - { label: "Company",     name: company,     widget: string }
+              - { label: "Period",      name: period,      widget: string }
+              - { label: "Description", name: description, widget: text }
+              - name: bullets
+                label: "Key Achievements"
+                widget: list
+                field: { label: "Point", name: point, widget: string }
+
+      - name: "services"
+        label: "🛠️ Services"
+        file: "_data/services.json"
+        fields:
+          - name: services
+            label: Services
+            widget: list
+            fields:
+              - { label: "Title",       name: title,       widget: string }
+              - { label: "Icon (e.g. bi-shield-lock)", name: icon, widget: string }
+              - { label: "Description", name: description, widget: text }
+
+      - name: "portfolio"
+        label: "🖼️ Portfolio Works"
+        file: "_data/portfolio.json"
+        fields:
+          - name: items
+            label: Portfolio Items
+            widget: list
+            fields:
+              - { label: "Title",       name: title,    widget: string }
+              - { label: "Category",    name: category, widget: select, options: ["security", "cloud", "content", "fintech"] }
+              - { label: "Description", name: desc,     widget: string }
+              - { label: "Image",       name: image,    widget: image }
+              - { label: "Link URL",    name: link,     widget: string, required: false }
