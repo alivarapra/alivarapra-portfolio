@@ -1,6 +1,11 @@
 backend:
   name: git-gateway
   branch: main
+  identity_url: "https://alimk.netlify.app/.netlify/identity"
+  gateway_url: "https://alimk.netlify.app/.netlify/git"
+  squash_merges: true
+
+local_backend: false
 
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
